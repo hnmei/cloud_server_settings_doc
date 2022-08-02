@@ -1,10 +1,10 @@
 <!--
  * @Author: Haonan Mei
  * @Date: 2022-08-02 11:00:42
- * @LastEditTime: 2022-08-02 17:10:35
+ * @LastEditTime: 2022-08-02 17:33:59
  * @LastEditors: Haonan Mei
  * @Description: 
- * @FilePath: \00_settings\docs\GPU云服务器配置文档.md
+ * @FilePath: \00_settings\docs\README.md
 -->
 
 # GPU云服务器配置文档
@@ -13,7 +13,7 @@
 
 ## 写在前面
 你在参考这份文档时，可能有需求上的变化，可以利用本文档熟悉整个过程后，根据实际情况自行调整；
-作者水平有限，如果有更好的实现方案，欢迎fork该文档源码修改！[Github Repo]
+作者水平有限，如果有更好的实现方案，欢迎fork该文档源码修改！[Github Repo](https://github.com/LeslieMei/cloud_server_settings_doc)
 
 ## 整体思路
 
