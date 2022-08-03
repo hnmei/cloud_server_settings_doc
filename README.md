@@ -1,10 +1,10 @@
 <!--
  * @Author: Haonan Mei
  * @Date: 2022-08-02 11:00:42
- * @LastEditTime: 2022-08-02 17:33:59
+ * @LastEditTime: 2022-08-03 18:37:49
  * @LastEditors: Haonan Mei
  * @Description: 
- * @FilePath: \00_settings\docs\README.md
+ * @FilePath: \docs\README.md
 -->
 
 # GPU云服务器配置文档
@@ -125,3 +125,15 @@
 ## 文件和数据传输
 1. 如果你是Mac/Linux用户，学习一下`scp`命令，在命令行用`scp`完成文件传输即可
 2. 如果你是Windows用户，参考一下知乎，安装一个Filezilla Client，用来传输文件即可。这是一个图形化界面，连上服务器后，用鼠标拖动传输即可
+
+## 测试
+测试默认以上服务器配置已经完成
+
+1. 创建本地脚本 ![pic](pics/local_sc.png)
+
+2. 远程连接服务器并传输文件: 通过filezilla传输 
+   ![pic](pics/connect.png) ![pic](pics/copy_file.png)
+
+3. (optional) 终端预览脚本：通过Vim预览 ![pic](pics/vim_preview.png)
+
+4. 运行测试脚本并输出结果：通过`python {script_name}`运行 ![pic](pics/run_script.png)
