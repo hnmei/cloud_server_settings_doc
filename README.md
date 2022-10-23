@@ -1,7 +1,7 @@
 <!--
  * @Author: Haonan Mei
  * @Date: 2022-08-02 11:00:42
- * @LastEditTime: 2022-08-03 18:37:49
+ * @LastEditTime: 2022-10-23 14:59:44
  * @LastEditors: Haonan Mei
  * @Description: 
  * @FilePath: \docs\README.md
@@ -126,7 +126,7 @@
 1. 如果你是Mac/Linux用户，学习一下`scp`命令，在命令行用`scp`完成文件传输即可
 2. 如果你是Windows用户，参考一下知乎，安装一个Filezilla Client，用来传输文件即可。这是一个图形化界面，连上服务器后，用鼠标拖动传输即可
 
-## 测试
+### 测试
 测试默认以上服务器配置已经完成
 
 1. 创建本地脚本 ![pic](pics/local_sc.png)
@@ -137,3 +137,24 @@
 3. (optional) 终端预览脚本：通过Vim预览 ![pic](pics/vim_preview.png)
 
 4. 运行测试脚本并输出结果：通过`python {script_name}`运行 ![pic](pics/run_script.png)
+
+## 云硬盘
+### 挂载
+1. 在左侧导航栏找到 “储存与快照“， 进入云硬盘，选中该数据盘并挂载到你创建的实例上；![pic](pics/disk.png)
+2. 进入云主机的命令行界面，键入`sudo fdisk -l`，查看本机的硬盘状况，通常最后一个`/dev/vdb`就是我们刚刚挂载上的硬盘；
+3. 键入`sudo mount /dev/vdb /data`，将设备挂载到`/data`文件夹下，此时`cd /data`即可看到硬盘里的数据，之后想硬盘里保存数据存到该文件夹下即可；
+> 对格式化字眼保持警惕，不要轻易对硬盘进行格式化，除非你知道自己在干嘛！
+
+### 卸载
+为数据安全起见，建议完成以下卸载流程，类似于U盘先弹出再拔出，因为有的系统不支持热插拔
+1. 键入`sudo umount /data`，将硬盘从该文件夹下挂起，此时储存到该文件夹下的数据不再存入硬盘里，而存入系统盘；
+2. 在腾讯云挂载的界面进行卸载即
+
+## 远程使用GUI编程
+
+### RStudio
+1. 在服务器端键入`sudo rstudio-server start`, 看到回复`TTY detected ...`等信息说明运行正常；
+2. 在自己的浏览器网址栏访问`{服务器的公网IP}:{LocalHost, 通常是8787}`, e.g. `43.138.6.67:8787`，即可使用；
+
+### Jupyter Notebook
+To be continued...
