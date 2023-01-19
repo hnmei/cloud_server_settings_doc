@@ -1,7 +1,7 @@
 <!--
  * @Author: Haonan Mei
  * @Date: 2022-08-02 11:00:42
- * @LastEditTime: 2022-12-15 21:26:11
+ * @LastEditTime: 2023-01-19 15:52:22
  * @LastEditors: Haonan Mei
  * @Description: 
  * @FilePath: \undefinedd:\leslie\ra\danqingmei\00_settings\docs\README.md
@@ -173,4 +173,22 @@
 2. 在自己的浏览器网址栏访问`{服务器的公网IP}:{LocalHost, 通常是8787}`, e.g. `43.138.6.67:8787`，即可使用；
 
 ### Jupyter Notebook
-To be continued...
+1. 初始化设置
+   1. 在服务器上键入`jupyter notebook --generate-config`，生成配置文件
+   2. `vim /home/ubuntu/.jupyter/jupyter_notebook_config.py`，后面即为你的配置文件位置
+   3. 在改文件末端粘贴以下：
+         ```
+         c.NotebookApp.ip = '*'
+         c.NotebookApp.notebook_dir = '/home/ubuntu'
+         c.NotebookApp.open_browser = False
+         c.NotebookApp.port = 8888
+         ```
+   4. 生成密码，`python`后
+         ```
+         >>> from notebook.auth import passwd
+         >>> passwd()
+         ```
+      输入密码即可
+2. 远程登录服务器notebook
+   1. 服务器上`jupyter notebook`开启；
+   2. 在自己电脑上的浏览器里输入`{IP}:{PORT}`，其中IP是服务器的公网IP，PORT是上文复制粘贴的端口，组要注意的是，这里的端口要在腾讯云的安全组里。
